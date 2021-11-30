@@ -28,7 +28,63 @@ html {
 body {
   box-sizing: border-box; }
 
+.container {
+  display: grid;
+  grid-template-rows: 6rem repeat(4, min-content); }
+
 body {
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  line-height: 1.7; }
+  font-weight: 300;
+  line-height: 1.6;
+  font-size: 1.4rem; }
+
+.heading__primary {
+  font-size: 2.5rem;
+  font-weight: 700; }
+
+.heading__secondary {
+  font-size: 1.8rem; }
+  .heading__secondary--dark {
+    font-weight: 500; }
+  .heading__secondary--light {
+    font-weight: 300; }
+
+.heading__tertiary {
+  font-size: 1.6rem; }
+  .heading__tertiary--dark {
+    font-weight: 500; }
+  .heading__tertiary--light {
+    font-weight: 300; }
+
+.logo {
+  display: block;
+  padding: 1.5rem 0 1.2rem 0;
+  height: 100%;
+  text-align: center; }
+  .logo__img {
+    width: 40%;
+    height: 100%;
+    background-size: cover; }
+
+.location {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  background-color: #eee;
+  justify-content: center;
+  grid-gap: 1rem;
+  padding: 1.5rem 0 1rem 0;
+  box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.3); }
+  .location__form {
+    width: 12rem;
+    background-color: #eee; }
+    .location__form input {
+      border: none;
+      font-size: inherit;
+      font-family: inherit;
+      background-color: inherit;
+      width: 100%; }
+
+.details {
+  background-color: #f7f7f7;
+  display: grid;
+  grid-template-rows: repeat(2, min-content); }

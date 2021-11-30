@@ -1,0 +1,32 @@
+.logo {
+  display: block;
+  padding: 1.5rem 0 1.2rem 0;
+  height: 100%;
+  text-align: center;
+  &__img {
+    width: 40%;
+    height: 100%;
+    background-size: cover;
+  }
+}
+
+.location {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  background-color: $color-grey-light-1;
+  justify-content: center;
+  grid-gap: 1rem;
+  padding: 1.5rem 0 1rem 0;
+  box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  &__form {
+    width: 12rem;
+    background-color: $color-grey-light-1;
+    & input {
+      border: none;
+      font-size: inherit;
+      font-family: inherit;
+      background-color: inherit;
+      width: 100%;
+    }
+  }
+}

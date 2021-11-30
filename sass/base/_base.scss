@@ -13,3 +13,7 @@ html {
 body {
   box-sizing: border-box;
 }
+.container {
+  display: grid;
+  grid-template-rows: 6rem repeat(4, min-content);
+}
