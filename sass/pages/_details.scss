@@ -11,5 +11,48 @@
     grid-gap: 2rem;
   }
   &__steps {
+    margin: 4rem 0 4rem 0;
+    padding: 0 2rem;
+    h1 {
+      margin-bottom: 2rem;
+    }
+  }
+  &__list {
+    list-style: none;
+    display: grid;
+    grid-gap: 1.85rem;
+    & :last-child {
+      .details__item--icon {
+        color: $color-primary;
+      }
+    }
+  }
+  &__item {
+    background-color: $color-grey-light-1;
+    padding: 1.7rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    border-radius: 2rem;
+    grid-gap: 2rem;
+    align-items: baseline;
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+
+    & > * {
+      transform: translateX(-3rem);
+    }
+
+    &--number {
+      background-color: $color-primary;
+      color: $color-white;
+      padding: 0 0.7rem;
+      border-radius: 50%;
+    }
+    &--icon {
+      font-size: 1.6rem;
+      color: $color-grey-dark;
+    }
+    &--text {
+      font-weight: 600;
+    }
   }
 }
