@@ -13,6 +13,7 @@
   &__steps {
     margin: 4rem 0 4rem 0;
     padding: 0 2rem;
+
     h1 {
       margin-bottom: 2rem;
     }
@@ -20,7 +21,8 @@
   &__list {
     list-style: none;
     display: grid;
-    grid-gap: 1.85rem;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    grid-gap: 2rem;
     & :last-child {
       .details__item--icon {
         color: $color-primary;
@@ -50,9 +52,6 @@
     &--icon {
       font-size: 1.6rem;
       color: $color-grey-dark;
-    }
-    &--text {
-      font-weight: 600;
     }
   }
 }
