@@ -16,7 +16,7 @@
   display: grid;
   grid-template-columns: repeat(2, min-content);
   background-color: $color-grey-light-1;
-  justify-content: center;
+  place-content: center;
   grid-gap: 1rem;
   padding: 1.5rem 0 1rem 0;
   box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
@@ -29,6 +29,10 @@
       font-family: inherit;
       background-color: inherit;
       width: 100%;
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 }

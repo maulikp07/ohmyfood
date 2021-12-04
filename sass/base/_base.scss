@@ -15,7 +15,10 @@ body {
 }
 .container {
   display: grid;
-  grid-template-rows: 6rem repeat(auto-fit, min-content);
+}
+header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
 }
 main {
   padding: 0 2rem;

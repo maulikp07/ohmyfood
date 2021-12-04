@@ -1,6 +1,6 @@
 .details {
   display: grid;
-  grid-template-rows: repeat(2, minmax(min-content, max-content));
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
 
   &__explore {
     background-color: $color-grey-light-2;
@@ -9,6 +9,7 @@
     place-items: center;
     padding: 2rem;
     grid-gap: 2rem;
+    align-content: center;
   }
   &__steps {
     margin: 4rem 0 4rem 0;
@@ -21,8 +22,9 @@
   &__list {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 40rem));
     grid-gap: 2rem;
+    justify-content: center;
     & :last-child {
       .details__item--icon {
         color: $color-primary;

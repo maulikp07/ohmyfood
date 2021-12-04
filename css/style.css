@@ -29,8 +29,11 @@ body {
   box-sizing: border-box; }
 
 .container {
+  display: grid; }
+
+header {
   display: grid;
-  grid-template-rows: 6rem repeat(auto-fit, min-content); }
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); }
 
 main {
   padding: 0 2rem;
@@ -88,7 +91,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, min-content);
   background-color: #eee;
-  justify-content: center;
+  place-content: center;
   grid-gap: 1rem;
   padding: 1.5rem 0 1rem 0;
   box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.3); }
@@ -101,6 +104,8 @@ body {
       font-family: inherit;
       background-color: inherit;
       width: 100%; }
+      .location__form input:focus {
+        outline: none; }
 
 .cards {
   display: grid;
@@ -162,6 +167,36 @@ body {
     .card__details__checkbox:checked + .card__details__label .card__details__icon--regular {
       display: none; }
 
+.footer {
+  background-color: #333;
+  display: grid;
+  color: #f7f7f7;
+  padding: 2rem;
+  align-items: center; }
+  .footer h2 {
+    font-family: "Shrikhand", cursive;
+    margin-bottom: 1rem;
+    font-size: 2rem; }
+  .footer__list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
+  .footer__item {
+    margin-bottom: 0.2rem; }
+    .footer__item--withIcon {
+      display: grid;
+      grid-template-columns: 2.5rem max-content;
+      place-items: center; }
+    .footer__item__icon {
+      margin-right: 1rem; }
+  .footer__link, .footer__link:link, .footer__link:visited {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 0.5px solid transparent; }
+  .footer__link:hover {
+    border-bottom: 0.5px solid #f7f7f7; }
+
 .btn, .btn:visited {
   border: none;
   font-size: inherit;
@@ -203,14 +238,15 @@ body {
 
 .details {
   display: grid;
-  grid-template-rows: repeat(2, minmax(min-content, max-content)); }
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr)); }
   .details__explore {
     background-color: #f7f7f7;
     display: grid;
     text-align: center;
     place-items: center;
     padding: 2rem;
-    grid-gap: 2rem; }
+    grid-gap: 2rem;
+    align-content: center; }
   .details__steps {
     margin: 4rem 0 4rem 0;
     padding: 0 2rem; }
@@ -219,8 +255,9 @@ body {
   .details__list {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-    grid-gap: 2rem; }
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 40rem));
+    grid-gap: 2rem;
+    justify-content: center; }
     .details__list :last-child .details__item--icon {
       color: #9356dc; }
   .details__item {
