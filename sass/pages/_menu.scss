@@ -1,6 +1,88 @@
 .menu {
+  width: 100%;
+  height: 100vh;
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+  background-color: $color-white;
+  //   z-index: 9999;
+  //   opacity: 0;
+  transition: all 0.3s;
+  display: grid;
+
   &__header {
+    display: grid;
+    grid-template-columns: min-content calc(100vw - 5rem);
+    place-items: center;
+    padding: 1.5rem 0 1.2rem 2rem;
+
+    & > .logo {
+      padding: 0;
+    }
+
+    &__link {
+      &,
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: $color-black;
+      }
+    }
   }
   &__cards {
+    display: grid;
+    background-color: $color-grey-light-1;
+  }
+  &__title__card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    &__img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      max-width: 50rem;
+      max-height: 20rem;
+    }
+    &__details {
+      display: grid;
+      grid-template-columns: max-content min-content;
+      justify-content: space-between;
+      padding: 2rem 1.5rem 0 1.5rem;
+      background-color: $color-grey-light-1;
+      border-radius: 2rem 2rem 0 0;
+      transform: translateY(-1.5rem);
+    }
+  }
+  &__card {
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
+    & > h3 {
+      margin-bottom: 1.5rem;
+      &::after {
+        content: "";
+        display: block;
+        height: 0.2rem;
+        width: 4.5rem;
+        background-color: $color-tertiary;
+      }
+    }
+    &__list {
+      list-style: none;
+      display: grid;
+      grid-gap: 1.5rem;
+    }
+    &__item {
+      border-radius: 2rem;
+      padding: 1rem;
+      background-color: $color-white;
+      display: grid;
+      grid-template-columns: max-content min-content;
+      justify-content: space-between;
+      &__price {
+        align-self: end;
+      }
+    }
   }
 }

@@ -50,4 +50,9 @@
     );
     transition: all 0.4s;
   }
+  &--menu {
+    place-self: center;
+
+    padding: 1.5rem 6rem;
+  }
 }

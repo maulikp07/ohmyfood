@@ -48,6 +48,8 @@ body {
 .heading__primary {
   font-size: 2.5rem;
   font-weight: 700; }
+  .heading__primary--title {
+    font-family: "Shrikhand", cursive; }
 
 .heading__secondary {
   font-size: 1.8rem; }
@@ -62,12 +64,17 @@ body {
     font-weight: 500; }
   .heading__tertiary--light {
     font-weight: 300; }
+  .heading__tertiary--uppercase {
+    text-transform: uppercase; }
 
 .u-margin-bottom-small {
   margin-bottom: 2rem !important; }
 
 .u-margin-bottom-medium {
   margin-bottom: 4rem !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 6rem !important; }
 
 .u-margin-top-small {
   margin-top: 2rem !important; }
@@ -236,6 +243,10 @@ body {
   background-image: linear-gradient(to right bottom, #ff79da, #9356dc);
   transition: all 0.4s; }
 
+.btn--menu {
+  place-self: center;
+  padding: 1.5rem 6rem; }
+
 .details {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr)); }
@@ -279,3 +290,68 @@ body {
     .details__item--icon {
       font-size: 1.6rem;
       color: #777; }
+
+.menu {
+  width: 100%;
+  height: 100vh;
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+  background-color: #fff;
+  transition: all 0.3s;
+  display: grid; }
+  .menu__header {
+    display: grid;
+    grid-template-columns: min-content calc(100vw - 5rem);
+    place-items: center;
+    padding: 1.5rem 0 1.2rem 2rem; }
+    .menu__header > .logo {
+      padding: 0; }
+    .menu__header__link, .menu__header__link:link, .menu__header__link:visited {
+      text-decoration: none;
+      color: #000; }
+  .menu__cards {
+    display: grid;
+    background-color: #eee; }
+  .menu__title__card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); }
+    .menu__title__card__img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      max-width: 50rem;
+      max-height: 20rem; }
+    .menu__title__card__details {
+      display: grid;
+      grid-template-columns: max-content min-content;
+      justify-content: space-between;
+      padding: 2rem 1.5rem 0 1.5rem;
+      background-color: #eee;
+      border-radius: 2rem 2rem 0 0;
+      transform: translateY(-1.5rem); }
+  .menu__card {
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); }
+    .menu__card > h3 {
+      margin-bottom: 1.5rem; }
+      .menu__card > h3::after {
+        content: "";
+        display: block;
+        height: 0.2rem;
+        width: 4.5rem;
+        background-color: #99e2d0; }
+    .menu__card__list {
+      list-style: none;
+      display: grid;
+      grid-gap: 1.5rem; }
+    .menu__card__item {
+      border-radius: 2rem;
+      padding: 1rem;
+      background-color: #fff;
+      display: grid;
+      grid-template-columns: max-content min-content;
+      justify-content: space-between; }
+      .menu__card__item__price {
+        align-self: end; }
