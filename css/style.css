@@ -15,6 +15,26 @@ $brakepoint argument choices:
 1em = 16px;
 
 */
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(8rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes rotateTick {
+  0% {
+    transform: rotate(45deg); }
+  25% {
+    transform: rotate(90deg); }
+  50% {
+    transform: rotate(180deg); }
+  75% {
+    transform: rotate(270deg); }
+  100% {
+    transform: rotate(360deg); } }
+
 *,
 *::after,
 *::before {
@@ -356,16 +376,14 @@ body {
         display: grid;
         justify-content: space-between;
         overflow: hidden;
-        cursor: pointer;
-        transition: all 1s; }
+        cursor: pointer; }
       .menu__card__item__text {
-        padding: 1rem;
-        transition: all 1s; }
+        padding: 1rem; }
       .menu__card__item__price {
         align-self: end;
         padding-bottom: 1rem;
         margin-right: 1rem;
-        transition: all 1s; }
+        transition: all 0.5s; }
       .menu__card__item__checkbox {
         display: none; }
       .menu__card__item__icon {
@@ -373,16 +391,22 @@ body {
         height: 100%;
         color: #fff;
         font-size: 2.5rem;
-        display: none;
+        display: grid;
         place-content: center;
+        width: 8rem;
         opacity: 0;
-        width: 0;
-        transition: all 1s; }
+        transition: all 0.5s ease-in-out; }
       .menu__card__item__checkbox:not(checked) + .menu__card__item__label {
         grid-template-columns: max-content min-content; }
       .menu__card__item__checkbox:checked + .menu__card__item__label {
         grid-template-columns: max-content repeat(2, min-content); }
+      .menu__card__item__checkbox:not(checked) + .menu__card__item__label .menu__card__item__icon > i::before {
+        content: ""; }
       .menu__card__item__checkbox:checked + .menu__card__item__label .menu__card__item__icon {
-        width: 8rem;
-        opacity: 1;
-        display: grid; }
+        animation: moveInRight 0.5s ease-in-out;
+        animation-fill-mode: both; }
+        .menu__card__item__checkbox:checked + .menu__card__item__label .menu__card__item__icon > i::before {
+          content: "\f058"; }
+        .menu__card__item__checkbox:checked + .menu__card__item__label .menu__card__item__icon > i {
+          animation: rotateTick 0.25s 0.25s ease-in-out;
+          animation-fill-mode: both; }

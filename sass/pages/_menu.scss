@@ -85,18 +85,16 @@
         justify-content: space-between;
         overflow: hidden;
         cursor: pointer;
-        transition: all 1s;
       }
 
       &__text {
         padding: 1rem;
-        transition: all 1s;
       }
       &__price {
         align-self: end;
         padding-bottom: 1rem;
         margin-right: 1rem;
-        transition: all 1s;
+        transition: all 0.5s;
       }
       &__checkbox {
         display: none;
@@ -106,11 +104,12 @@
         height: 100%;
         color: $color-white;
         font-size: 2.5rem;
-        display: none;
+        display: grid;
         place-content: center;
+        width: 8rem;
         opacity: 0;
-        width: 0;
-        transition: all 1s;
+
+        transition: all 0.5s ease-in-out;
       }
       &__checkbox:not(checked) + &__label {
         grid-template-columns: max-content min-content;
@@ -118,10 +117,20 @@
       &__checkbox:checked + &__label {
         grid-template-columns: max-content repeat(2, min-content);
       }
+      &__checkbox:not(checked) + &__label &__icon > i::before {
+        content: "";
+      }
+
       &__checkbox:checked + &__label &__icon {
-        width: 8rem;
-        opacity: 1;
-        display: grid;
+        & > i::before {
+          content: "\f058";
+        }
+        & > i {
+          animation: rotateTick 0.25s 0.25s ease-in-out;
+          animation-fill-mode: both;
+        }
+        animation: moveInRight 0.5s ease-in-out;
+        animation-fill-mode: both;
       }
     }
   }
