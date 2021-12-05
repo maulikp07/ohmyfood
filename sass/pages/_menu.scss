@@ -75,13 +75,53 @@
     }
     &__item {
       border-radius: 2rem;
-      padding: 1rem;
       background-color: $color-white;
       display: grid;
-      grid-template-columns: max-content min-content;
-      justify-content: space-between;
+
+      &__label {
+        border-radius: 2rem;
+        background-color: $color-white;
+        display: grid;
+        justify-content: space-between;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 1s;
+      }
+
+      &__text {
+        padding: 1rem;
+        transition: all 1s;
+      }
       &__price {
         align-self: end;
+        padding-bottom: 1rem;
+        margin-right: 1rem;
+        transition: all 1s;
+      }
+      &__checkbox {
+        display: none;
+      }
+      &__icon {
+        background-color: $color-tertiary;
+        height: 100%;
+        color: $color-white;
+        font-size: 2.5rem;
+        display: none;
+        place-content: center;
+        opacity: 0;
+        width: 0;
+        transition: all 1s;
+      }
+      &__checkbox:not(checked) + &__label {
+        grid-template-columns: max-content min-content;
+      }
+      &__checkbox:checked + &__label {
+        grid-template-columns: max-content repeat(2, min-content);
+      }
+      &__checkbox:checked + &__label &__icon {
+        width: 8rem;
+        opacity: 1;
+        display: grid;
       }
     }
   }

@@ -348,10 +348,41 @@ body {
       grid-gap: 1.5rem; }
     .menu__card__item {
       border-radius: 2rem;
-      padding: 1rem;
       background-color: #fff;
-      display: grid;
-      grid-template-columns: max-content min-content;
-      justify-content: space-between; }
+      display: grid; }
+      .menu__card__item__label {
+        border-radius: 2rem;
+        background-color: #fff;
+        display: grid;
+        justify-content: space-between;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 1s; }
+      .menu__card__item__text {
+        padding: 1rem;
+        transition: all 1s; }
       .menu__card__item__price {
-        align-self: end; }
+        align-self: end;
+        padding-bottom: 1rem;
+        margin-right: 1rem;
+        transition: all 1s; }
+      .menu__card__item__checkbox {
+        display: none; }
+      .menu__card__item__icon {
+        background-color: #99e2d0;
+        height: 100%;
+        color: #fff;
+        font-size: 2.5rem;
+        display: none;
+        place-content: center;
+        opacity: 0;
+        width: 0;
+        transition: all 1s; }
+      .menu__card__item__checkbox:not(checked) + .menu__card__item__label {
+        grid-template-columns: max-content min-content; }
+      .menu__card__item__checkbox:checked + .menu__card__item__label {
+        grid-template-columns: max-content repeat(2, min-content); }
+      .menu__card__item__checkbox:checked + .menu__card__item__label .menu__card__item__icon {
+        width: 8rem;
+        opacity: 1;
+        display: grid; }
