@@ -1,14 +1,14 @@
 .menu {
-  width: 100%;
-  height: 100vh;
-  /* position: fixed;
+  width: 0;
+  height: 100%;
+  position: fixed;
   top: 0;
-  left: 0; */
+  left: 0;
   background-color: $color-white;
-  //   z-index: 9999;
-  //   opacity: 0;
+  z-index: 9999;
+  opacity: 0;
   transition: all 0.3s;
-  display: grid;
+  display: none;
 
   &__header {
     display: grid;
@@ -35,13 +35,13 @@
   }
   &__title__card {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     &__img {
       height: 100%;
       width: 100%;
       object-fit: cover;
-      max-width: 50rem;
       max-height: 20rem;
+      overflow: hidden;
     }
     &__details {
       display: grid;
@@ -56,7 +56,7 @@
   &__card {
     padding: 0 1.5rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
 
     & > h3 {
       margin-bottom: 1.5rem;
@@ -115,7 +115,14 @@
         grid-template-columns: max-content min-content;
       }
       &__checkbox:checked + &__label {
-        grid-template-columns: max-content repeat(2, min-content);
+        grid-template-columns: minmax(20rem, 1rem) repeat(2, min-content);
+      }
+      &__checkbox:checked + &__label > &__text h3 {
+        width: 100%;
+        display: block;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
       &__checkbox:not(checked) + &__label &__icon > i::before {
         content: "";
@@ -133,5 +140,12 @@
         animation-fill-mode: both;
       }
     }
+  }
+  &:target {
+    width: 100%;
+    opacity: 1;
+    display: grid;
+    visibility: visible;
+    overflow-y: auto;
   }
 }

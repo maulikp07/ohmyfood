@@ -44,6 +44,9 @@ $brakepoint argument choices:
 
 html {
   font-size: 62.5%; }
+  @media only screen and (max-width: 450px) {
+    html {
+      font-size: 46.875%; } }
 
 body {
   box-sizing: border-box; }
@@ -63,7 +66,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   line-height: 1.6;
-  font-size: 1.4rem; }
+  font-size: 1.6rem; }
 
 .heading__primary {
   font-size: 2.5rem;
@@ -312,14 +315,16 @@ body {
       color: #777; }
 
 .menu {
-  width: 100%;
-  height: 100vh;
-  /* position: fixed;
+  width: 0;
+  height: 100%;
+  position: fixed;
   top: 0;
-  left: 0; */
+  left: 0;
   background-color: #fff;
+  z-index: 9999;
+  opacity: 0;
   transition: all 0.3s;
-  display: grid; }
+  display: none; }
   .menu__header {
     display: grid;
     grid-template-columns: min-content calc(100vw - 5rem);
@@ -335,13 +340,13 @@ body {
     background-color: #eee; }
   .menu__title__card {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); }
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); }
     .menu__title__card__img {
       height: 100%;
       width: 100%;
       object-fit: cover;
-      max-width: 50rem;
-      max-height: 20rem; }
+      max-height: 20rem;
+      overflow: hidden; }
     .menu__title__card__details {
       display: grid;
       grid-template-columns: max-content min-content;
@@ -353,7 +358,7 @@ body {
   .menu__card {
     padding: 0 1.5rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); }
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr)); }
     .menu__card > h3 {
       margin-bottom: 1.5rem; }
       .menu__card > h3::after {
@@ -399,7 +404,13 @@ body {
       .menu__card__item__checkbox:not(checked) + .menu__card__item__label {
         grid-template-columns: max-content min-content; }
       .menu__card__item__checkbox:checked + .menu__card__item__label {
-        grid-template-columns: max-content repeat(2, min-content); }
+        grid-template-columns: minmax(20rem, 1rem) repeat(2, min-content); }
+      .menu__card__item__checkbox:checked + .menu__card__item__label > .menu__card__item__text h3 {
+        width: 100%;
+        display: block;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
       .menu__card__item__checkbox:not(checked) + .menu__card__item__label .menu__card__item__icon > i::before {
         content: ""; }
       .menu__card__item__checkbox:checked + .menu__card__item__label .menu__card__item__icon {
@@ -410,3 +421,9 @@ body {
         .menu__card__item__checkbox:checked + .menu__card__item__label .menu__card__item__icon > i {
           animation: rotateTick 0.25s 0.25s ease-in-out;
           animation-fill-mode: both; }
+  .menu:target {
+    width: 100%;
+    opacity: 1;
+    display: grid;
+    visibility: visible;
+    overflow-y: auto; }
