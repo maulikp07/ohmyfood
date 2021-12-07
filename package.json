@@ -7,11 +7,11 @@
   "browserslist": "last 10 versions",
   "scripts": {
     "devserver": "live-server",
-    "watch:sass": "nodemon -e scss -x \"npm run compile:sass\"",
+    "watch:sass1": "nodemon -e scss -x \"npm run compile:sass\"",
     "start": "npm-run-all --parallel devserver watch:sass",
-    "watch:sass1": "node-sass sass/main.scss css/style.css --watch",
-    "compile:sass1": "node-sass sass/main.scss css/style.comp.css",
-    "compile:sass": "node-sass sass/main.scss css/style.css",
+    "watch:sass": "node-sass sass/main.scss css/style.css --watch",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "compile:sass1": "node-sass sass/main.scss css/style.css",
     "prefix:css": "postcss css/style.comp.css -u autoprefixer -o css/style.prefix.css",
     "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
     "build:css": "npm-run-all compile:sass prefix:css compress:css"
