@@ -463,7 +463,12 @@ body {
         overflow: hidden;
         cursor: pointer; }
       .menu__card__item__text {
+        display: block;
         padding: 1rem; }
+        .menu__card__item__text span {
+          display: block; }
+        .menu__card__item__text:nth-child(1) {
+          font-weight: 500; }
       .menu__card__item__price {
         align-self: end;
         padding-bottom: 1rem;
@@ -485,7 +490,7 @@ body {
         grid-template-columns: max-content min-content; }
       .menu__card__item__checkbox:checked + .menu__card__item__label {
         grid-template-columns: minmax(20rem, 1rem) repeat(2, min-content); }
-      .menu__card__item__checkbox:checked + .menu__card__item__label > .menu__card__item__text h3 {
+      .menu__card__item__checkbox:checked + .menu__card__item__label > .menu__card__item__text span {
         width: 100%;
         display: block;
         overflow: hidden !important;

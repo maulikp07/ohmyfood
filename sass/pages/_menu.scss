@@ -119,8 +119,16 @@
       }
 
       &__text {
+        display: block;
         padding: 1rem;
+        & span {
+          display: block;
+        }
+        &:nth-child(1) {
+          font-weight: 500;
+        }
       }
+
       &__price {
         align-self: end;
         padding-bottom: 1rem;
@@ -148,7 +156,7 @@
       &__checkbox:checked + &__label {
         grid-template-columns: minmax(20rem, 1rem) repeat(2, min-content);
       }
-      &__checkbox:checked + &__label > &__text h3 {
+      &__checkbox:checked + &__label > &__text span {
         width: 100%;
         display: block;
         overflow: hidden !important;
