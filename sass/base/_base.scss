@@ -11,6 +11,12 @@ html {
   @media only screen and (max-width: 450px) {
     font-size: 46.875%;
   }
+  @media only screen and (min-width: 1440px) {
+    font-size: 80%;
+  }
+  @media only screen and (min-width: 3250px) {
+    font-size: 90%;
+  }
 }
 
 body {
@@ -18,12 +24,16 @@ body {
 }
 .container {
   display: grid;
-  min-height: 100vh;
-  min-width: 100vw;
+  min-height: 98vh;
+  min-width: 98vw;
 }
 header {
   display: grid;
+  align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(38.37rem, 1fr));
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(37.55rem, 1fr));
+  }
 }
 main {
   padding: 0 2rem;

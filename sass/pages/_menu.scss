@@ -18,6 +18,12 @@
 
     & > .logo {
       padding: 0;
+      @media only screen and (min-width: 1440px) {
+        height: 90%;
+      }
+      @media only screen and (min-width: 2000px) {
+        height: 80%;
+      }
     }
 
     &__link {
@@ -70,22 +76,13 @@
         grid-template-columns: 0.3fr 1fr;
       }
     }
-    @media only screen and (min-width: 800px) {
+    @media only screen and (min-width: 768px) {
       & {
         grid-template-columns: 0.1fr 1fr;
         grid-gap: 1rem;
       }
     }
-    // animation: moveUp 0.5s cubic-bezier(0.64, 0, 0.18, 0.99);
-    // &--entrees {
-    //   animation: moveUp 0.3s cubic-bezier(0.64, 0, 0.18, 0.99);
-    // }
-    // &--main {
-    //   animation: moveUp 0.3s cubic-bezier(0.64, 0, 0.18, 0.99);
-    // }
-    // &--dessert {
-    //   animation: moveUp 0.3s cubic-bezier(0.64, 0, 0.18, 0.99);
-    // }
+
     & > h3 {
       margin-bottom: 1.5rem;
       @media only screen and (min-width: 800px) {
@@ -106,7 +103,6 @@
       display: grid;
       grid-gap: 1.5rem;
       grid-template-columns: repeat(auto-fit, minmax(38rem, 1fr));
-      //   animation: moveUp 0.5s cubic-bezier(0.64, 0, 0.18, 0.99);
     }
     &__item {
       border-radius: 2rem;

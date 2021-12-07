@@ -59,18 +59,32 @@
       font-size: 2rem;
       -webkit-text-stroke: 0.5px white;
     }
-    &__checkbox:not(:checked) + &__label &__icon--solid {
+    &__label:not(:hover) &__icon--solid {
       display: none;
     }
-    &__checkbox:checked + &__label &__icon--solid {
+    &__label:hover &__icon--solid {
       display: inline-block;
       background-image: linear-gradient($color-primary, $color-secondary);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
     }
-    &__checkbox:checked + &__label &__icon--regular {
+    &__label:hover &__icon--regular {
       display: none;
     }
+
+    // &__checkbox:not(:checked) + &__label &__icon--solid {
+    //   display: none;
+    // }
+    // &__checkbox:checked + &__label &__icon--solid {
+    //   display: inline-block;
+    //   background-image: linear-gradient($color-primary, $color-secondary);
+    //   background-clip: text;
+    //   -webkit-background-clip: text;
+    //   color: transparent;
+    // }
+    // &__checkbox:checked + &__label &__icon--regular {
+    //   display: none;
+    // }
   }
 }

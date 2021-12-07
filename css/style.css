@@ -79,18 +79,28 @@ html {
   @media only screen and (max-width: 450px) {
     html {
       font-size: 46.875%; } }
+  @media only screen and (min-width: 1440px) {
+    html {
+      font-size: 80%; } }
+  @media only screen and (min-width: 3250px) {
+    html {
+      font-size: 90%; } }
 
 body {
   box-sizing: border-box; }
 
 .container {
   display: grid;
-  min-height: 100vh;
-  min-width: 100vw; }
+  min-height: 98vh;
+  min-width: 98vw; }
 
 header {
   display: grid;
+  align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(38.37rem, 1fr)); }
+  @media only screen and (min-width: 768px) {
+    header {
+      grid-template-columns: repeat(auto-fit, minmax(37.55rem, 1fr)); } }
 
 main {
   padding: 0 2rem;
@@ -188,6 +198,14 @@ body {
     justify-content: end;
     padding: 1.5rem; } }
 
+@media only screen and (min-width: 1440px) {
+  .header > .logo {
+    height: 90%; } }
+
+@media only screen and (min-width: 2000px) {
+  .header > .logo {
+    height: 80%; } }
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -237,15 +255,15 @@ body {
       cursor: pointer;
       font-size: 2rem;
       -webkit-text-stroke: 0.5px white; }
-    .card__details__checkbox:not(:checked) + .card__details__label .card__details__icon--solid {
+    .card__details__label:not(:hover) .card__details__icon--solid {
       display: none; }
-    .card__details__checkbox:checked + .card__details__label .card__details__icon--solid {
+    .card__details__label:hover .card__details__icon--solid {
       display: inline-block;
       background-image: linear-gradient(#9356dc, #ff79da);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent; }
-    .card__details__checkbox:checked + .card__details__label .card__details__icon--regular {
+    .card__details__label:hover .card__details__icon--regular {
       display: none; }
 
 .footer {
@@ -388,6 +406,12 @@ body {
     padding: 1.5rem 0 1.2rem 2rem; }
     .menu__header > .logo {
       padding: 0; }
+      @media only screen and (min-width: 1440px) {
+        .menu__header > .logo {
+          height: 90%; } }
+      @media only screen and (min-width: 2000px) {
+        .menu__header > .logo {
+          height: 80%; } }
     .menu__header__link, .menu__header__link:link, .menu__header__link:visited {
       text-decoration: none;
       color: #000; }
@@ -423,7 +447,7 @@ body {
     @media only screen and (min-width: 550px) {
       .menu__card {
         grid-template-columns: 0.3fr 1fr; } }
-    @media only screen and (min-width: 800px) {
+    @media only screen and (min-width: 768px) {
       .menu__card {
         grid-template-columns: 0.1fr 1fr;
         grid-gap: 1rem; } }
