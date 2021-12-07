@@ -18,10 +18,12 @@ body {
 }
 .container {
   display: grid;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 header {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(37.55rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(38.37rem, 1fr));
 }
 main {
   padding: 0 2rem;

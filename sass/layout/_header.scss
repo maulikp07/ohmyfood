@@ -42,12 +42,11 @@
 }
 @media only screen and (min-width: 768px) {
   .header {
-    overflow: overlay;
+    z-index: 1;
     box-shadow: 0rem 0.2rem 0.5rem rgba($color-black, 0.2);
     background-color: $color-grey-light-1;
   }
   .header > .logo {
-    overflow: hidden;
     text-align: right;
     transform: translateX(15%);
     box-shadow: none;
@@ -55,5 +54,6 @@
   }
   .location {
     justify-content: end;
+    padding: 1.5rem;
   }
 }
